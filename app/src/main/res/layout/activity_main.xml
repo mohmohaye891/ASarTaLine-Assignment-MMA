@@ -6,92 +6,124 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".MainActivity"
+    tools:context=".activities.MainActivity"
     android:fitsSystemWindows="true">
 
-   <android.support.design.widget.AppBarLayout
-       android:id="@+id/app_bar"
-       android:layout_width="match_parent"
-       android:layout_height="@dimen/detail_backdrop_height"
-       android:fitsSystemWindows="true"
-       android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:fitsSystemWindows="true">
 
-     <RelativeLayout
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/iv_backdrop"
+        <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/img1"
-            android:fitsSystemWindows="true"
-            android:scaleType="centerCrop"
-            app:layout_collapseMode="parallax"/>
+            android:layout_height="@dimen/news_detail_appbar_height"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="@color/colorPrimary">
 
-        <LinearLayout
-            android:id="@+id/ll1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="140dp">
-
-           <TextView
-               android:id="@+id/love_music"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="Good Afternoon Anish"
-               android:textColor="@android:color/white"
-               android:textSize="@dimen/backdrop_title" />
-
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="it's time for lunch"
-               android:textColor="@android:color/white"
-               android:textSize="@dimen/backdrop_subtitle" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_below="@+id/ll1">
-
-            <SearchView
-                android:id="@+id/simpleSearchView"
+            <ImageView
+                android:id="@+id/iv_backdrop"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:iconifiedByDefault="false"
-                android:queryHint="Search View"
-                android:background="#00f"
-                android:padding="40dp"/> <!-- set 40 dp padding from all the sides of a search view -->
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:src="@drawable/img1"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"/>
 
-     </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-      <android.support.v7.widget.Toolbar
-          android:id="@+id/toolbar"
-          android:layout_width="match_parent"
-          android:layout_height="?attr/actionBarSize"
-          app:layout_collapseMode="pin"
-          app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+                <TextView
+                    android:id="@+id/tv_greating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Good Afternoon Anish"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/text_heading_1x"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginLeft="@dimen/margin_medium_2"/>
 
-      </android.support.v7.widget.Toolbar>
+                <TextView
+                    android:id="@+id/tv_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="it's time for lunch"
+                    android:textColor="#ffffff"
+                    android:layout_below="@+id/tv_greating"
+                    android:textSize="@dimen/text_heading_1x"
+                    android:layout_marginLeft="@dimen/margin_medium_2"
+                    android:layout_marginBottom="@dimen/margin_xlarge"/>
 
-   </android.support.design.widget.AppBarLayout>
 
-    <FrameLayout
+            </RelativeLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" >
+
+            </android.support.v7.widget.Toolbar>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_news"
+        <SearchView
+            android:id="@+id/search"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:iconifiedByDefault="false">
+            <requestFocus />
+        </SearchView>
+
+        <LinearLayout
+            android:id="@+id/ll_icons"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </FrameLayout>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/search">
+
+            <ImageView
+                android:id="@+id/iv_chenese_icon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/icon_chenese"/>
+            <ImageView
+                android:id="@+id/iv_tacos_icon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/icon_tacos"
+                android:layout_marginTop="@dimen/margin_medium"/>
+            <ImageView
+                android:id="@+id/iv_burger_icon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/icon_buger"/>
+            <ImageView
+                android:id="@+id/iv_donut_icon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/icon_donut"/>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_war_dee"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_icons"/>
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

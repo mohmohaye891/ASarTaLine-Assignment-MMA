@@ -21,6 +21,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activities.WarDeeDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
     </application>
 
 </manifest>

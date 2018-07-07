@@ -6,35 +6,43 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <android.support.design.widget.CoordinatorLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:fitsSystemWindows="true">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fitsSystemWindows="true">
+            android:layout_height="@dimen/detail_backdrop_height"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/news_detail_appbar_height"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:contentScrim="@color/colorPrimary">
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginEnd="64dp"
+                app:expandedTitleMarginStart="48dp"
+                app:expandedTitleTextAppearance="@android:color/transparent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <ImageView
                     android:id="@+id/iv_news_backdrop"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    tools:src="@drawable/image"
-                    android:fitsSystemWindows="true"/>
+                    android:src="@drawable/image"/>
 
                 <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    app:layout_collapseMode="pin">
-
-                </android.support.v7.widget.Toolbar>
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
             </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -42,25 +50,120 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:id="@+id/ll_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_foodname"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="White sauce pasta With Vegetable"
+                    android:textSize="@dimen/text_regular_3x"
+                    android:layout_marginLeft="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:paddingLeft="@dimen/margin_medium_2"
+                    android:paddingRight="@dimen/margin_medium_2"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_toRightOf="@+id/tv_foodname"
+                    android:text="$269"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:background="@color/button_color"/>
+
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/tv_food_name"
+                android:id="@+id/tv_text_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="White sauce pasta With Vegetable" />
+                android:layout_below="@id/ll_title"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_xxlarge"
+                android:lineSpacingMultiplier="1.2"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipisciing elit. Etiam id sem risus. Mauris imperdiet varlus eros. Morbi at faucibus dolor, in tristique tortor."
+                android:textSize="@dimen/text_regular" />
 
-            <Button
-                android:id="@+id/btn_prices"
+            <TextView
+                android:id="@+id/tv_suggestion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_medium_3_n"
-                android:layout_toRightOf="@+id/tv_food_name"
-                android:background="@color/colorPrimary"
-                android:text="369" />
+                android:layout_below="@id/tv_text_details"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_xxlarge"
+                android:text="Add a note (extra sauce, no onions, etc.)"
+                android:textSize="@dimen/text_regular" />
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@id/tv_suggestion"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:background="@color/driver_color" />
+
+            <LinearLayout
+                android:id="@+id/ll_add_to_chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/margin_medium_2"
+                android:layout_marginLeft="@dimen/margin_medium_2">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/button_color"
+                    android:text="- 2 +"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@color/button_color"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:text="ADD TO CART" />
+
+                <!--<TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/primary"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_medium_2"
+                    android:text="- 2 +" />-->
+
+               <!-- <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_medium_2"
+                    android:layout_weight="2"
+                    android:background="@color/primary"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_medium_2"
+                    android:text="ADD TO CART" />-->
+
+            </LinearLayout>
 
         </RelativeLayout>
 
     </android.support.design.widget.CoordinatorLayout>
+
+
 
 </FrameLayout>

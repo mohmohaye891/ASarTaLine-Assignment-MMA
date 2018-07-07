@@ -69,7 +69,8 @@
                     android:layout_marginLeft="@dimen/margin_medium_2"
                     android:layout_marginTop="@dimen/margin_medium_2"
                     android:paddingLeft="@dimen/margin_medium_2"
-                    android:paddingRight="@dimen/margin_medium_2"/>
+                    android:paddingRight="@dimen/margin_medium_2"
+                    android:layout_marginBottom="@dimen/margin_medium_2"/>
 
                 <Button
                     android:layout_width="0dp"
@@ -108,7 +109,7 @@
             <View
                 android:id="@+id/line"
                 android:layout_width="wrap_content"
-                android:layout_height="1dp"
+                android:layout_height="2dp"
                 android:layout_below="@id/tv_suggestion"
                 android:layout_marginEnd="@dimen/margin_medium_2"
                 android:layout_marginStart="@dimen/margin_medium_2"
@@ -121,6 +122,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/line"
                 android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_medium_2"
                 android:layout_marginRight="@dimen/margin_medium_2"
                 android:layout_marginLeft="@dimen/margin_medium_2">
 
@@ -138,25 +140,6 @@
                     android:background="@color/button_color"
                     android:layout_marginLeft="@dimen/margin_small"
                     android:text="ADD TO CART" />
-
-                <!--<TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/primary"
-                    android:gravity="center"
-                    android:padding="@dimen/margin_medium_2"
-                    android:text="- 2 +" />-->
-
-               <!-- <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margin_medium_2"
-                    android:layout_weight="2"
-                    android:background="@color/primary"
-                    android:gravity="center"
-                    android:padding="@dimen/margin_medium_2"
-                    android:text="ADD TO CART" />-->
 
             </LinearLayout>
 

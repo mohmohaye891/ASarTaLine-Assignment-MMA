@@ -14,4 +14,17 @@ public class ASTWarDeeVO {
 
     @SerializedName("images")
     private List<String> images;
+
+    @SerializedName("generalTaste")
+    private List<GeneralTasteVO> generalTaste;
+
+    @SerializedName("suitedFor")
+    private List<SuitedForVO> suitedFor;
+
+    @SerializedName("priceRangeMin")
+    private String priceRangeMin;
+
+    @SerializedName("priceRangeMax")
+    private String priceRangeMax;
+
 }

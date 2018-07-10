@@ -14,18 +14,18 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/thumbnail"
+            android:id="@+id/iv_shop"
             android:layout_width="@dimen/thumbnail"
             android:layout_height="@dimen/thumbnail"
             android:layout_marginRight="@dimen/row_padding"
             android:src="@drawable/thumbnail" />
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
+        <org.mmtextview.components.MMTextView
+            android:id="@+id/tv_item_name"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium_3"
-            android:layout_toRightOf="@id/thumbnail"
+            android:layout_toRightOf="@id/iv_shop"
             android:fontFamily="sans-serif-medium"
             android:text="Casa Pop"
             android:textColor="@color/contact_name"
@@ -35,17 +35,17 @@
             android:id="@+id/btn_rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_toRightOf="@+id/name"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/tv_item_name"
             android:background="@color/button_color"
             android:text="4.6" />
 
         <TextView
-            android:id="@+id/phone"
+            android:id="@+id/tv_item_country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/name"
-            android:layout_toRightOf="@id/thumbnail"
+            android:layout_below="@id/tv_item_name"
+            android:layout_toRightOf="@id/iv_shop"
             android:text="Cafe, Italian, Chinese"
             android:textColor="@color/contact_number"
             android:textSize="@dimen/contact_number" />
@@ -54,8 +54,8 @@
             android:id="@+id/tv_item_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/phone"
-            android:layout_toRightOf="@id/thumbnail"
+            android:layout_below="@+id/tv_item_country"
+            android:layout_toRightOf="@id/iv_shop"
             android:text="Cost 23000 for one"
             android:textColor="@color/contact_number"
             android:textSize="@dimen/contact_number" />
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_item_cost"
             android:layout_marginTop="@dimen/margin_medium_2"
-            android:layout_toRightOf="@+id/thumbnail"
+            android:layout_toRightOf="@+id/iv_shop"
             android:orientation="horizontal">
 
             <ImageView
@@ -76,7 +76,7 @@
                 android:layout_centerInParent="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/star"
-                android:tint="@color/colorAccent" />
+                android:tint="@color/button_color" />
 
             <ImageView
                 android:id="@+id/iv_rating_image2"
@@ -85,7 +85,7 @@
                 android:layout_centerInParent="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/star"
-                android:tint="@color/colorAccent" />
+                android:tint="@color/button_color" />
 
             <ImageView
                 android:id="@+id/iv_rating_image3"
@@ -94,7 +94,7 @@
                 android:layout_centerInParent="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/star"
-                android:tint="@color/colorAccent" />
+                android:tint="@color/button_color" />
 
             <ImageView
                 android:id="@+id/iv_rating_image4"
@@ -103,7 +103,7 @@
                 android:layout_centerInParent="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/star"
-                android:tint="@color/colorAccent" />
+                android:tint="@color/button_color" />
 
             <ImageView
                 android:id="@+id/iv_rating_image5"

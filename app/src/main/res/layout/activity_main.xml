@@ -65,6 +65,13 @@
                 app:layout_collapseMode="pin" >
 
             </android.support.v7.widget.Toolbar>
+<!--
+            <SearchView
+                android:id="@+id/sv_wardee"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:iconifiedByDefault="false">
+            </SearchView>-->
 
 
         </android.support.design.widget.CollapsingToolbarLayout>
@@ -75,14 +82,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:focusableInTouchMode="true">
 
        <SearchView
-            android:id="@+id/search"
+            android:id="@+id/sv_wardee"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:iconifiedByDefault="false">
-           <!-- <requestFocus />-->
         </SearchView>
 
         <LinearLayout
@@ -90,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@+id/search">
+            android:layout_below="@+id/sv_wardee">
 
             <ImageView
                 android:id="@+id/iv_chenese_icon"

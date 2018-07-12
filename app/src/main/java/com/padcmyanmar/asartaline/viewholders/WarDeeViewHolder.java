@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.padcmyanmar.asartaline.R;
 import com.padcmyanmar.asartaline.data.vos.ASTLWarDeeVO;
+import com.padcmyanmar.asartaline.data.vos.SearchResultsVO;
 import com.padcmyanmar.asartaline.delegates.WarDeeDelegate;
 import com.padcmyanmar.asartaline.utils.GlideApp;
 
@@ -62,4 +63,5 @@ public class WarDeeViewHolder extends RecyclerView.ViewHolder {
             ivShop.setVisibility(View.GONE);
         }
     }
+
 }
